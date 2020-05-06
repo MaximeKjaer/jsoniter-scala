@@ -54,7 +54,7 @@ view of an error context
 
 The library targets JDK 8+ and GraalVM 19+ (including compilation to native images) without any platform restrictions.
 
-Support of Scala.js and Scala Native is not a goal for the moment. 
+Support of Scala Native is not a goal for the moment. 
 
 ## Features and limitations
 - JSON parsing from `Array[Byte]`, `java.io.InputStream` or `java.nio.ByteBuffer`

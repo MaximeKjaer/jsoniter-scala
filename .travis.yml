@@ -26,5 +26,6 @@ matrix:
         - ls ${JAVA_HOME}
 script:
   - travis_wait 60 sbt -batch ++$TRAVIS_SCALA_VERSION! clean coverage test coverageAggregate mimaReportBinaryIssues < /dev/null
+  - SCALAJS_VERSION=0.6.32 travis_wait 60 sbt -batch ++$TRAVIS_SCALA_VERSION! clean coverage test coverageAggregate mimaReportBinaryIssues < /dev/null
 after_success:
   - bash <(curl -s https://codecov.io/bash)
