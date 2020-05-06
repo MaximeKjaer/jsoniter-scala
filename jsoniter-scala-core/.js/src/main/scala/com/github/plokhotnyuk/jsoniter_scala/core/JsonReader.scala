@@ -2516,8 +2516,7 @@ final class JsonReader private[jsoniter_scala](
 
   private[this] def parseString(): Int = {
     val minLim = Math.min(charBuf.length, tail - head)
-    if (Platform.isGraalVM) parseStringUnrolled(0, minLim, charBuf, head)
-    else parseString(0, minLim, charBuf, head)
+    parseString(0, minLim, charBuf, head)
   }
 
   @tailrec

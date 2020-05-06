@@ -1,8 +1,6 @@
 package com.github.plokhotnyuk.jsoniter_scala.core
 
 private[core] object Platform {
-  final val isGraalVM: Boolean = false
-
   @inline def stringFromByteArray(bytes: Array[Byte]): String =
     new String(bytes)
 
