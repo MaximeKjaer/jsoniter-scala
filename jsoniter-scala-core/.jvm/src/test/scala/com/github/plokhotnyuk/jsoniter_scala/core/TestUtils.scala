@@ -9,4 +9,10 @@ object TestUtils {
 
   def bytes(inputStream: InputStream): Array[Byte] =
     scala.reflect.io.Streamable.bytes(inputStream)
+
+  def lowercaseHex(b: Byte): String =
+    String.format("%02x", b)
+
+  def uppercaseHex(b: Byte): String =
+    String.format("%02X", b)
 }
