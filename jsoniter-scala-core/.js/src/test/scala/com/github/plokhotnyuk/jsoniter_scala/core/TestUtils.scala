@@ -3,6 +3,7 @@ import java.io.{ByteArrayInputStream, InputStream}
 
 object TestUtils {
   val isJDK8: Boolean = false
+  val isJS: Boolean = true
 
   def getResourceAsStream(resource: String): java.io.InputStream = {
     val resourcePath = Path.join(
@@ -30,4 +31,6 @@ object TestUtils {
     // In Scala.js, String.format takes Bytes to be Ints, so extra 0xff are added
     String.format("%02X", b & 0xff)
   }
+
+  def jvmOnly(thunk: => Unit): Unit = {}
 }

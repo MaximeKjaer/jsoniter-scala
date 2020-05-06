@@ -3,6 +3,7 @@ import java.io.InputStream
 
 object TestUtils {
   val isJDK8: Boolean = System.getProperty("java.version").startsWith("1.8")
+  val isJS: Boolean = false
 
   def getResourceAsStream(resource: String): java.io.InputStream =
     getClass.getResourceAsStream(resource)
@@ -15,4 +16,6 @@ object TestUtils {
 
   def uppercaseHex(b: Byte): String =
     String.format("%02X", b)
+
+  def jvmOnly(thunk: => Unit): Unit = thunk
 }
